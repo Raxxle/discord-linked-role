@@ -5,17 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hello There!</title>
   <style>
-    :root {
-      --bg: #0a0a0a;
-      --surface: #111111;
-      --border: #2a2a2a;
-      --text: #e0e0e0;
-      --muted: #a0a0a0;
-      --accent: #2ecc71;
-      --accent-glow: rgba(46, 204, 113, 0.3);
-      --dark-accent: #1a3a1a;
-    }
-
     * {
       margin: 0;
       padding: 0;
@@ -23,169 +12,85 @@
     }
 
     body {
-      background: var(--bg);
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      color: var(--text);
+      background: #0a0a0a;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: #e0e0e0;
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
       padding: 20px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    /* Animated grid background */
-    body::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(46, 204, 113, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(46, 204, 113, 0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
-      animation: gridMove 4s linear infinite;
-      z-index: 0;
-    }
-
-    @keyframes gridMove {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(40px, 40px); }
     }
 
     .card {
-      max-width: 540px;
+      max-width: 500px;
       width: 100%;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 40px 30px;
+      background: #121212;
+      border: 1px solid #2a2a2a;
+      border-radius: 16px;
+      padding: 44px 32px;
       text-align: center;
-      box-shadow: 0 0 30px var(--accent-glow), 0 20px 50px rgba(0, 0, 0, 0.6);
-      position: relative;
-      z-index: 1;
-      backdrop-filter: blur(5px);
-      transition: box-shadow 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      transition: border-color 0.3s ease;
     }
 
     .card:hover {
-      box-shadow: 0 0 50px var(--accent-glow), 0 20px 60px rgba(0, 0, 0, 0.7);
+      border-color: #3a3a3a;
     }
 
     .terminal-icon {
-      font-size: 52px;
+      font-size: 44px;
       margin-bottom: 12px;
-      filter: drop-shadow(0 0 8px rgba(46, 204, 113, 0.5));
+      opacity: 0.9;
     }
 
     h1 {
-      font-size: 2rem;
-      font-weight: 700;
+      font-size: 1.6rem;
+      font-weight: 600;
       color: #ffffff;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      position: relative;
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
     }
 
-    /* Glitch effect */
-    h1::before,
-    h1::after {
-      content: attr(data-text);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0.8;
-    }
-
-    h1::before {
-      color: #00ffcc;
-      z-index: -1;
-      animation: glitch1 2s infinite linear alternate-reverse;
-    }
-
-    h1::after {
-      color: #ff00aa;
-      z-index: -2;
-      animation: glitch2 3s infinite linear alternate-reverse;
-    }
-
-    @keyframes glitch1 {
-      0% { transform: translate(0); }
-      20% { transform: translate(-3px, 3px); }
-      40% { transform: translate(3px, -3px); }
-      60% { transform: translate(-3px, 0); }
-      80% { transform: translate(3px, 0); }
-      100% { transform: translate(0); }
-    }
-
-    @keyframes glitch2 {
-      0% { transform: translate(0); }
-      25% { transform: translate(3px, -3px); }
-      50% { transform: translate(-3px, 3px); }
-      75% { transform: translate(3px, 0); }
-      100% { transform: translate(0); }
-    }
-
-    .typing {
-      color: var(--muted);
+    .description {
+      color: #a0a0a0;
       font-size: 0.95rem;
-      margin-bottom: 28px;
       line-height: 1.6;
-      overflow: hidden;
-      white-space: normal;
-    }
-
-    .typing .cursor {
-      display: inline-block;
-      background: var(--accent);
-      width: 2px;
-      height: 1.1em;
-      vertical-align: text-bottom;
-      animation: blink 1s step-end infinite;
-    }
-
-    @keyframes blink {
-      50% { opacity: 0; }
+      margin-bottom: 28px;
+      padding: 0 8px;
     }
 
     .badge {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: linear-gradient(135deg, var(--dark-accent), #0e2b0e);
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      padding: 12px 24px;
+      background: #1a1a1a;
+      border: 1px solid #2ecc71;
+      color: #2ecc71;
+      padding: 10px 24px;
       border-radius: 50px;
-      font-weight: 700;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 0 0 20px var(--accent-glow);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
       margin-bottom: 32px;
-      animation: pulse 2s infinite;
+      transition: background 0.2s ease;
     }
 
-    @keyframes pulse {
-      0% { box-shadow: 0 0 20px var(--accent-glow); }
-      50% { box-shadow: 0 0 35px rgba(46, 204, 113, 0.5); }
-      100% { box-shadow: 0 0 20px var(--accent-glow); }
+    .badge:hover {
+      background: #1e2e1e;
     }
 
     .badge::before {
-      content: "🔒";
-      font-size: 1.2rem;
+      content: "❔";
+      font-size: 1rem;
     }
 
     .socials {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 16px;
-      margin-bottom: 30px;
+      gap: 14px;
+      margin-bottom: 28px;
     }
 
     .social-link {
@@ -199,59 +104,43 @@
       border-radius: 50px;
       font-size: 0.9rem;
       font-weight: 500;
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
       border: 1px solid transparent;
     }
 
     .social-link:hover {
       background: #2a2a2a;
       color: #ffffff;
-      border-color: var(--accent);
-      box-shadow: 0 0 15px var(--accent-glow);
-      transform: translateY(-2px);
+      border-color: #3a3a3a;
     }
 
     .footer {
       font-size: 0.8rem;
       color: #606060;
-      margin-top: 10px;
     }
 
     .footer span {
       color: #8a8a8a;
-      font-weight: 600;
+      font-weight: 500;
     }
   </style>
 </head>
 <body>
   <div class="card">
     <div class="terminal-icon">🖥️</div>
-    <h1 data-text="Hello There!">Hello There!</h1>
-    <div class="typing" id="typing"></div>
+    <h1>Hello There!</h1>
+    <p class="description">
+      This domain endpoint exists solely to verify the <strong>Zephyros</strong> discord bot developer.<br>
+      If you’re seeing this, you’re not accessing the verification and that’s totally fine because it is not eligible for the public.
+    </p>
     <div class="badge">Nothing interesting here :) </div>
     <div class="socials">
-      <a href="https://youtube.com/@RaxxleForReal" class="social-link" target="_blank">🌐 Raxxle YouTube</a>
-      <a href="https://github.com/Raxxle" class="social-link" target="_blank">🌐 Raxxle GitHub</a>
+      <a href="https://youtube.com/@RaxxleForReal" class="social-link" target="_blank">🌐 YouTube</a>
+      <a href="https://github.com/RaxxleForReal" class="social-link" target="_blank">🌐 GitHub</a>
     </div>
     <p class="footer">
       Developed &amp; Owned by <span>@RaxxleForReal</span>
     </p>
   </div>
-
-  <script>
-    const text = "This domain endpoint exists solely to verify the Zephyros discord bot developer. If you're seeing this, you're not accessing the verification and that's totally fine because it is not eligible for the public.";
-    const typingEl = document.getElementById('typing');
-    let i = 0;
-    function typeWriter() {
-      if (i < text.length) {
-        typingEl.innerHTML = text.substring(0, i + 1) + '<span class="cursor"></span>';
-        i++;
-        setTimeout(typeWriter, 25);
-      } else {
-        typingEl.innerHTML = text + '<span class="cursor"></span>';
-      }
-    }
-    window.onload = typeWriter;
-  </script>
 </body>
 </html>
