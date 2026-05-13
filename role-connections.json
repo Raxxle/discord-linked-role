@@ -1,0 +1,8 @@
+[
+  {
+    "key": "is_developer",
+    "name": "Verified Bot Developer",
+    "description": "Whether the user is the verified developer of this bot",
+    "type": 7
+  }
+]
